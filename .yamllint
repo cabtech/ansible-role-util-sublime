@@ -1,0 +1,22 @@
+---
+
+ignore: |
+  virtualenv/
+  venv/
+
+extends: default
+
+rules:
+  comments-indentation: disable
+  indentation: disable
+  line-length: disable
+  colons:
+    ignore: |
+     dummy.yml
+  commas:
+    ignore: |
+     dummy.yml
+  document-start:
+    ignore: |
+      dummy.yml
+...
