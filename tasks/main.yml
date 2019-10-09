@@ -6,8 +6,8 @@
     state: present
   become: true
   tags:
-  - sublime
-  - sublime-repo
+  - ct-sublime
+  - ct-sublime-repo
 
 - name: 'add Sublime Text repository to APT'
   apt_repository:
@@ -18,8 +18,8 @@
   register: reg_repo
   become: true
   tags:
-  - sublime
-  - sublime-repo
+  - ct-sublime
+  - ct-sublime-repo
 
 - name: 'update apt cache and install Sublime Text'
   apt:
@@ -28,6 +28,6 @@
     state: '{{sublime_state}}'
   become: true
   tags:
-  - sublime
-  - sublime-pkg
+  - ct-sublime
+  - ct-sublime-pkg
 ...
