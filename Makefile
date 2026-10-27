@@ -1,4 +1,4 @@
-lint: .lintyaml # .lintansible
+lint: .lintyaml .lintansible
 
 .lintansible: .lintyaml */*.yml .config/ansible-lint.yml
 	uv run ansible-lint --config-file=.config/ansible-lint.yml

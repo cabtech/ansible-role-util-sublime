@@ -1,7 +1,7 @@
 ---
-- name: 'add GPG signing key for the Sublime Text repo'
-  apt_key:
-    url: '{{sublime_gpg}}'
+- name: 'Add GPG signing key for the Sublime Text repo'
+  ansible.builtin.apt_key:
+    url: '{{ sublime_gpg }}'
     validate_certs: true
     state: present
   become: true
@@ -9,9 +9,9 @@
   - ct-sublime
   - ct-sublime-repo
 
-- name: 'add Sublime Text repository to APT'
-  apt_repository:
-    repo: '{{sublime_repo}}'
+- name: 'Add Sublime Text repository to APT'
+  ansible.builtin.apt_repository:
+    repo: '{{ sublime_repo }}'
     state: present
     update_cache: true
     filename: sublime
@@ -21,11 +21,11 @@
   - ct-sublime
   - ct-sublime-repo
 
-- name: 'update apt cache and install Sublime Text'
-  apt:
-    name: '{{sublime_pkg}}'
-    update_cache: '{{reg_repo is changed}}'
-    state: '{{sublime_state}}'
+- name: 'Update apt cache and install Sublime Text'
+  ansible.builtin.apt:
+    name: '{{ sublime_pkg }}'
+    update_cache: '{{ reg_repo is changed }}'
+    state: '{{ sublime_state }}'
   become: true
   tags:
   - ct-sublime
