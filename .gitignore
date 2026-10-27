@@ -1,1 +1,3 @@
 # ansible-role-util-sublime
+.ansible/
+src/
